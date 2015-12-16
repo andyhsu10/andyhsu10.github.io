@@ -1,0 +1,53 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-image: url("../img/background.png");
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: '微軟正黑體' !important;
+}
+
+#container{
+    position: relative;
+    background-color: rgba(255,255,255,0.85) !important;
+    height: 100%;
+}
+
+#header{
+    position: relative;
+    top: 50px;
+    letter-spacing: 0.5em;
+}
+
+#content{
+    position: relative;
+    top: 70px;
+    /*margin-top: 10px;*/
+    line-height: 1.5em;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+}
+
+.col-lg-6{
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+#logo{
+    width: 50%;
+}
+
+#title{
+    margin-top: 5px;
+    font-size: 3em !important;
+}
+
+h1{
+    font-weight: 900 !important;
+}
