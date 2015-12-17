@@ -16,7 +16,6 @@ body{
 #container{
     position: relative;
     background-color: rgba(255,255,255,0.85) !important;
-    height: 100%;
 }
 
 #header{
@@ -28,7 +27,6 @@ body{
 #content{
     position: relative;
     top: 70px;
-    /*margin-top: 10px;*/
     line-height: 1.5em;
     font-size: 1.5em;
     letter-spacing: 0.1em;
