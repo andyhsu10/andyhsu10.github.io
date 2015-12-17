@@ -1,5 +1,6 @@
 html{
     height: 100%;
+    overflow:auto;
 }
 
 body{
@@ -9,13 +10,15 @@ body{
     overflow-y: scroll;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    height:100%;
     font-family: '微軟正黑體' !important;
+    overflow:auto;
 }
 
-#container{
-    position: relative;
+#trans-bg{
+    position: absolute;
     background-color: rgba(255,255,255,0.85) !important;
+    height: 100%;
 }
 
 #header{
@@ -27,6 +30,7 @@ body{
 #content{
     position: relative;
     top: 70px;
+    margin-bottom: 50px;
     line-height: 1.5em;
     font-size: 1.5em;
     letter-spacing: 0.1em;
