@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#006aa6">
+
+    <title>Homework - 2018 Fall Multimedia Information Systems</title>
+
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Bootstrap core CSS-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+    	canvas {
+    		border: 1px solid #ced4da;
+    		border-radius: 0.25rem;
+    	}
+
+        .sticky-footer {
+        	bottom: 0;
+            width: 100%;
+            height: 56px;
+            background-color: #e9ecef;
+            line-height: 55px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-truncate" href="#">2018 Fall Multimedia Information Systems - Homework</a>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="bezier_link" href="#bezier" data-toggle="tab">Bezier Curve</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="fractal_link" href="#fractal" data-toggle="tab">Fractal</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                    	<div class="tab-pane mt-3 fade show active" id="bezier">
+                        	<div class="row">
+                                <div class="col-8">
+                                    <p class="text-muted"><button type="button" class="btn btn-info" id="reset_bezier">Clear</button> <i class="fa fa-refresh fa-spin fa-fw"></i> Double click to add a new point and single click to drag.</p>
+                                </div>
+                                <div class="col-4" style="margin: auto;">
+                                    <p class="float-right">Position: (<span id="bezier_x">0</span>, <span id="bezier_y">0</span>)</p>
+                                </div>
+                            	<div class="col-lg-12">
+                            		<canvas id="bezier_canvas">
+    									This text is displayed if your browser does not support HTML5 Canvas.
+   									</canvas>
+                            	</div>
+                        	</div>
+                    	</div>
+
+                    	<div class="tab-pane mt-3 fade" id="fractal">
+                        	<div class="row">
+                                <div class="col-8">
+                                        <p class="text-muted"><button type="button" class="btn btn-info" id="reset_fractal">Clear</button> <i class="fa fa-refresh fa-spin fa-fw"></i> Double click to add a new point.</p>
+                                </div>
+                                <div class="col-4" style="margin: auto;">
+                                    <p class="float-right">Position: (<span id="fractal_x">0</span>, <span id="fractal_y">0</span>)</p>
+                                </div>
+                        		<div class="col-6">
+                        			<div class="form-group">
+                                    	<label>Polygon</label>
+                                    	<input type="number" min="3" max="6" value="3" class="form-control" id="polygon_num">
+                                	</div>
+                        		</div>
+                        		<div class="col-6">
+                        			<div class="form-group">
+                                    	<label>Level</label>
+                                    	<input type="number" min="0" max="6" value="0" class="form-control" id="level_num">
+                                	</div>
+                        		</div>
+	
+                            	<div class="col-lg-12">
+                            		<canvas id="fractal_canvas" height="600">
+    									This text is displayed if your browser does not support HTML5 Canvas.
+   									</canvas>
+                            	</div>
+                        	</div>
+                    	</div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+			<!-- /.row -->
+        </div>
+        <!-- /.container-fluid-->
+    </div>
+    <!-- /.content-wrapper-->
+    
+	<!-- Footer -->
+    <footer class="sticky-footer text-truncate">
+        <div class="container">
+            <div class="text-center">
+                <small>By M10709206 An-Ting Hsu 徐安廷</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Core plugin JavaScript-->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="js/bezier.js"></script>
+    <script src="js/fractal.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
