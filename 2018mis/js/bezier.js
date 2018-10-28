@@ -3,35 +3,31 @@ function CanvasState(canvas){
     this.width = canvas.width;
     this.height = canvas.height;
     this.ctx = canvas.getContext('2d');
-    // This complicates things a little but but fixes mouse co-ordinate problems
-    // when there's a border or padding. See getMouse for more detail
+    
+    // Fix mouse co-ordinate problems
     var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
     if(document.defaultView && document.defaultView.getComputedStyle){
-        this.stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10)      || 0;
-        this.stylePaddingTop  = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10)       || 0;
-        this.styleBorderLeft  = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10)  || 0;
-        this.styleBorderTop   = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10)   || 0;
+        this.stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10) || 0;
+        this.stylePaddingTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10) || 0;
+        this.styleBorderLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10) || 0;
+        this.styleBorderTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10) || 0;
     }
-    // Some pages have fixed-position bars(like the stumbleupon bar) at the top or left of the page
-    // They will mess up mouse coordinates and this fixes that
     var html = document.body.parentNode;
     this.htmlTop = html.offsetTop;
     this.htmlLeft = html.offsetLeft;
 
     // **** Keep track of state! ****
-  
-    this.valid = false; // when set to false, the canvas will redraw everything
-    this.points = [];  // the collection of things to be drawn
-    this.dragging = false; // Keep track of when we are dragging
-    // the current selected object. In the future we could turn this into an array for multiple selection
-    this.selection = null;
-    this.dragoffx = 0; // See mousedown and mousemove events for explanation
+    this.valid = false; // if false, then redraw
+    this.points = [];
+    this.dragging = false; // Keep track of when dragging
+    this.selection = null; // the current selected object
+    this.dragoffx = 0;
     this.dragoffy = 0;
   
     // **** events! ****
     var myState = this;
   
-    //fixes a problem where double clicking causes text to get selected on the canvas
+    // fixes a problem where double clicking causes text to get selected on the canvas
     canvas.addEventListener('selectstart', function(e){ e.preventDefault(); return false; }, false);
     // Up, down, and move are for dragging
     canvas.addEventListener('mousedown', function(e){
@@ -42,8 +38,6 @@ function CanvasState(canvas){
         for(var i = points.length-1; i >= 0; i--){
             if(points[i].contains(mx, my)){
                 var mySel = points[i];
-                // Keep track of where in the object we clicked
-                // so we can move it smoothly(see mousemove)
                 myState.dragoffx = mx - mySel.x;
                 myState.dragoffy = my - mySel.y;
                 myState.dragging = true;
@@ -52,21 +46,19 @@ function CanvasState(canvas){
                 return;
             }
         }
-        // havent returned means we have failed to select anything.
-        // If there was an object selected, we deselect it
+
+        // deselect object
         if(myState.selection){
             myState.selection = null;
-            myState.valid = false; // Need to clear the old selection border
+            myState.valid = false;
         }
     }, true);
     canvas.addEventListener('mousemove', function(e){
         var mouse = myState.getMouse(e);
         if(myState.dragging){
-            // We don't want to drag the object by its top-left corner, we want to drag it
-            // from where we clicked. Thats why we saved the offset and use it here
             myState.selection.x = mouse.x - myState.dragoffx;
             myState.selection.y = mouse.y - myState.dragoffy;   
-            myState.valid = false; // Something's dragging so we must redraw
+            myState.valid = false;
         }
         $("#bezier_x").text((mouse.x-myState.dragoffx)<0? 0:parseInt(mouse.x-myState.dragoffx));
         $("#bezier_y").text((mouse.y-myState.dragoffy)<0? 0:parseInt(mouse.y-myState.dragoffy));
@@ -139,17 +131,14 @@ CanvasState.prototype.reset = function(){
     this.dragoffy = 0;
 }
 
-// While draw is called as often as the INTERVAL variable demands,
-// It only ever does something if the canvas gets invalidated by our code
 CanvasState.prototype.draw = function(){
-    // if our state is invalid, redraw and validate!
+    // if state is invalid, then redraw
     if(!this.valid){
         this.valid = true;
         var ctx = this.ctx;
         var points = this.points;
         this.clear();
     
-        // draw all points
         if(points.length >= 2){
             ctx.setLineDash([4, 4]);
             ctx.beginPath();
@@ -175,7 +164,6 @@ CanvasState.prototype.draw = function(){
 }
 
 // Creates an object with x and y defined, set to the mouse position relative to the state's canvas
-// If you wanna be super-correct this can be tricky, we have to worry about padding and borders
 CanvasState.prototype.getMouse = function(e){
     var element = this.canvas, offsetX = 0, offsetY = 0, mx, my;
   
@@ -195,7 +183,6 @@ CanvasState.prototype.getMouse = function(e){
     mx = e.pageX - offsetX;
     my = e.pageY - offsetY;
   
-    // We return a simple javascript object(a hash) with x and y defined
     return {x: mx, y: my};
 }
 

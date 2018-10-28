@@ -3,26 +3,24 @@ function CanvasStateF(canvas){
     this.width = canvas.width;
     this.height = canvas.height;
     this.ctx = canvas.getContext('2d');
-    // This complicates things a little but but fixes mouse co-ordinate problems
-    // when there's a border or padding. See getMouse for more detail
+    
+    // Fix mouse co-ordinate problems
     var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
     if(document.defaultView && document.defaultView.getComputedStyle){
-        this.stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10)      || 0;
-        this.stylePaddingTop  = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10)       || 0;
-        this.styleBorderLeft  = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10)  || 0;
-        this.styleBorderTop   = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10)   || 0;
+        this.stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10) || 0;
+        this.stylePaddingTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10) || 0;
+        this.styleBorderLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10) || 0;
+        this.styleBorderTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10) || 0;
     }
-    // Some pages have fixed-position bars(like the stumbleupon bar) at the top or left of the page
-    // They will mess up mouse coordinates and this fixes that
     var html = document.body.parentNode;
     this.htmlTop = html.offsetTop;
     this.htmlLeft = html.offsetLeft;
 
     // **** Keep track of state! ****
   
-    this.valid = false; // when set to false, the canvas will redraw everything
-    this.points = [];  // the collection of things to be drawn
-  
+    this.valid = false; // if false, then redraw
+    this.points = [];
+
     // **** events! ****
     var myState = this;
   
@@ -92,17 +90,14 @@ CanvasStateF.prototype.reset = function(){
     this.points = [];
 }
 
-// While draw is called as often as the INTERVAL variable demands,
-// It only ever does something if the canvas gets invalidated by our code
 CanvasStateF.prototype.draw = function(){
-    // if our state is invalid, redraw and validate!
+    // if state is invalid, then redraw
     if(!this.valid){
         this.valid = true;
         var ctx = this.ctx;
         var points = this.points;
         this.clear();
     
-        // draw all points
         for(var i = 1; i < points.length; i++)
             fractalCurve(points[i-1], points[i], points[i].polygon, points[i].level, ctx);
         for(var i = 0; i < points.length; i++){
@@ -113,7 +108,6 @@ CanvasStateF.prototype.draw = function(){
 }
 
 // Creates an object with x and y defined, set to the mouse position relative to the state's canvas
-// If you wanna be super-correct this can be tricky, we have to worry about padding and borders
 CanvasStateF.prototype.getMouse = function(e){
     var element = this.canvas, offsetX = 0, offsetY = 0, mx, my;
   
@@ -133,7 +127,6 @@ CanvasStateF.prototype.getMouse = function(e){
     mx = e.pageX - offsetX;
     my = e.pageY - offsetY;
   
-    // We return a simple javascript object(a hash) with x and y defined
     return {x: mx, y: my};
 }
 
