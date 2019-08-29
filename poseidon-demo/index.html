@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Poseidon Network Edge Demo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://poseidon.network/static/favicon-32x32.png">
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #232633;
+            color: #90cfbe;
+            font-family: 'Montserrat',sans-serif;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        nav {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .logo {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <img alt="logo" src="https://poseidon.network/static/poseidonnetwork.svg" class="logo">
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row mt-4">
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="text-center"><h2>NAS</h2></div>
+                <img src="" class="img-fluid" id="qn_qrcode"/>
+                <div class="text-center mt-3"><button class="btn btn-primary" onclick="getQrcode('qn');">Refresh</button></div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="text-center"><h2>TV</h2></div>
+                <img src="" class="img-fluid" id="tv_qrcode"/>
+                <div class="text-center mt-3"><button class="btn btn-primary" onclick="getQrcode('tv');">Refresh</button></div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="text-center"><h2>IoT</h2></div>
+                <img src="" class="img-fluid" id="io_qrcode"/>
+                <div class="text-center mt-3"><button class="btn btn-primary" onclick="getQrcode('io');">Refresh</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 4 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script>
+        function getQrcode(type){
+            var url = "https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=";
+            var id = parseInt(Math.random() * 100000);
+
+            $('#'+type+'_qrcode').attr('src', url+type.toUpperCase()+id);
+        }
+
+        $(document).ready(function(){
+            getQrcode('qn');
+            getQrcode('tv');
+            getQrcode('io');
+        });
+    </script>
+</body>
+</html>
