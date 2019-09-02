@@ -47,19 +47,22 @@
             <div class="col-lg-4 col-sm-6 mt-4 mb-4">
                 <div class="text-center"><h2>NAS</h2></div>
                 <img src="" class="img-fluid" id="qn_qrcode"/>
-                <div class="text-center mt-3"><button class="btn btn-primary" onclick="getQrcode('qn');">Refresh</button></div>
             </div>
 
             <div class="col-lg-4 col-sm-6 mt-4 mb-4">
                 <div class="text-center"><h2>TV</h2></div>
                 <img src="" class="img-fluid" id="tv_qrcode"/>
-                <div class="text-center mt-3"><button class="btn btn-primary" onclick="getQrcode('tv');">Refresh</button></div>
             </div>
 
             <div class="col-lg-4 col-sm-6 mt-4 mb-4">
                 <div class="text-center"><h2>IoT</h2></div>
                 <img src="" class="img-fluid" id="io_qrcode"/>
-                <div class="text-center mt-3"><button class="btn btn-primary" onclick="getQrcode('io');">Refresh</button></div>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-lg-12">
+                <div class="text-center"><button class="btn btn-primary btn-lg" onclick="getAll();">Refresh All</button></div>
             </div>
         </div>
     </div>
@@ -79,10 +82,14 @@
             $('#'+type+'_qrcode').attr('src', url+type.toUpperCase()+id);
         }
 
-        $(document).ready(function(){
+        function getAll(){
             getQrcode('qn');
             getQrcode('tv');
             getQrcode('io');
+        }
+
+        $(document).ready(function(){
+            getAll();
         });
     </script>
 </body>
