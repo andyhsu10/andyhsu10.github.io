@@ -76,7 +76,7 @@
 
     <script>
         function getQrcode(type){
-            var url = "https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=";
+            var url = "https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=QN-TEST:";
             var id = parseInt(Math.random() * 100000);
 
             $('#'+type+'_qrcode').attr('src', url+type.toUpperCase()+id);
