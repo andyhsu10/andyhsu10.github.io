@@ -1,0 +1,75 @@
+nav, footer {
+    background-color: #737373;
+}
+
+footer {
+    height: 4rem;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar {
+    padding: 0 1rem;
+    box-shadow: 0 15px 15px -15px rgba(120, 120, 120, 0.9);
+    z-index: 100;
+}
+
+.navbar-nav {
+    margin-top: .5rem;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-item {
+    margin: 0 .5rem;
+}
+
+.nav-item.active a {
+    color: #FEFD54 !important;
+    border-bottom: 4px solid #D6562E;
+}
+
+.section-wrapper {
+    position: relative;
+}
+
+.section-wrapper section {
+    position: relative;
+}
+
+.main-figure {
+    width: 100%;
+}
+
+.content-table, .lecture-schedule-table {
+    width: 70vw;
+}
+
+table.content-table, .content-table td, .lecture-schedule-table td {
+    border: 8px solid white;
+    color: white;
+}
+
+.content-table td, .lecture-schedule-table td {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.content-table td.blue {
+    background-color: #55A9D5;
+}
+
+.content-table td.orange {
+    background-color: #D6562E;
+}
+
+.lecture-schedule-table tr:nth-child(odd) td {
+    background-color: #55A9D4;
+}
+
+.lecture-schedule-table tr:nth-child(even) td {
+    background-color: #99D0EA;
+}
