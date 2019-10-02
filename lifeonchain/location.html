@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>2019 鏈上生活節 Life on Chain!</title>
-
+    <link rel="shortcut icon" href="img/favicon.ico"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
     <!-- Bootstrap 4 -->
@@ -14,15 +14,17 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#" style="font-weight: bold; color: #68D8EE;">Life on Chain!</a>
+        <a class="navbar-brand" href="/" style="font-weight: bold; color: #68D8EE;">
+            <img src="img/lifeonchain.png" style="height: 24px;"/>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav float-right">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">首頁</a>
+                    <a class="nav-link" href="/">首頁</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="movie.html">電影</a>
@@ -44,19 +46,34 @@
     </nav>
 
     <div class="section-wrapper">
-        <section style="margin-top: -100px; z-index: 1; border-right: 100vw solid #FEFD54; border-bottom: 100px solid transparent; height: 500px;">
+        <section style="margin-top: -100px; z-index: 1; border-right: 100vw solid #FEFD54; border-bottom: 100px solid transparent; height: 200px;">
+            <div class="section-container" style="margin-top: 100px;">
+                <div class="container" style="padding-top: 2rem;">
+                    <img src="img/location.png" class="intro-img img-fluid" />
+                    <img src="img/huashan.png" class="intro-img img-fluid" style="position: absolute; bottom: -100px;" />
+                </div>
+            </div>
         </section>
 
         <section style="margin-top: -100px; z-index: 0;">
             <img class="main-figure" src="img/location.jpg"/>
         </section>
     
-        <section style="margin-top: -100px; z-index: 1; border-right: 100vw solid #69DAF0; border-top: 100px solid transparent; height: 500px;">
+        <section class="shape shape-right-left shape-blue" style="height: 700px;">
+            <div class="section-container">
+                <div class="container" style="padding-top: 50px;">
+                    <img src="img/map.png" class="img-fluid" />
+                </div>
+            </div>
         </section>
     </div>
 
     <footer>
-        <p style="text-align: center; vertical-align: middle;">主辦單位：</p>
+        <div class="container">
+            <img class="organizer-img" src="img/organizer.png" />
+            <img src="img/zombit.png" />
+            <img src="img/alysida.png" />
+        </div>
     </footer>
 
     <!-- Bootstrap 4 -->

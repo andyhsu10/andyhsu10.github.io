@@ -1,3 +1,7 @@
+body {
+    font-family: 'Noto Sans TC', 微軟正黑體, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 nav, footer {
     background-color: #737373;
 }
@@ -5,8 +9,12 @@ nav, footer {
 footer {
     height: 4rem;
     color: white;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+footer img {
+    max-height: 2.6rem;
 }
 
 .navbar {
@@ -17,10 +25,18 @@ footer {
 
 .navbar-nav {
     margin-top: .5rem;
+    flex-direction: row;
 }
 
 .nav-link {
     color: white !important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+}
+
+.ml-auto .dropdown-menu {
+    left: auto !important;
+    right: 0px;
 }
 
 .nav-item {
@@ -32,6 +48,22 @@ footer {
     border-bottom: 4px solid #D6562E;
 }
 
+.margin-100 {
+    margin-top: -100px;
+}
+
+.margin-150 {
+    margin-top: -150px;
+}
+
+.margin-200 {
+    margin-top: -200px;
+}
+
+.container {
+    text-align: center;
+}
+
 .section-wrapper {
     position: relative;
 }
@@ -40,12 +72,67 @@ footer {
     position: relative;
 }
 
+.section-container {
+    width: 100vw;
+    text-align: center;
+}
+
+.shape-left-right .section-container {
+    margin-left: -100vw;
+}
+
 .main-figure {
     width: 100%;
 }
 
+.shape {
+    margin-top: -100px;
+    z-index: 1;
+    height: 500px;
+}
+
+.shape-right-left {
+    border-right: 100vw solid;
+    border-top: 100px solid transparent;
+}
+
+.shape-left-right {
+    border-left: 100vw solid;
+    border-top: 100px solid transparent;
+}
+
+.shape-yellow {
+    border-right-color: #FEFD54;
+    border-left-color: #FEFD54;
+}
+
+.shape-blue {
+    border-right-color: #69DAF0;
+    border-left-color: #69DAF0;
+}
+
+.shape-orange {
+    border-right-color: #D6562E;
+    border-left-color: #D6562E;
+}
+
+.intro-img {
+    max-width: 450px;
+    max-height: 60px;
+}
+
+.market-img {
+    max-height: 200px;
+}
+
+.content-table {
+    table-layout : fixed;
+}
+
 .content-table, .lecture-schedule-table {
     width: 70vw;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 table.content-table, .content-table td, .lecture-schedule-table td {
@@ -53,9 +140,17 @@ table.content-table, .content-table td, .lecture-schedule-table td {
     color: white;
 }
 
-.content-table td, .lecture-schedule-table td {
+.content-table td {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.lecture-schedule-table td {
     text-align: center;
     padding: 1rem 0;
+    font-size: 1.2rem;
 }
 
 .content-table td.blue {
@@ -72,4 +167,9 @@ table.content-table, .content-table td, .lecture-schedule-table td {
 
 .lecture-schedule-table tr:nth-child(even) td {
     background-color: #99D0EA;
+}
+
+.organizer-img {
+    max-height: 1.5rem;
+    margin-right: 12px;
 }

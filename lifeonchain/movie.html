@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>2019 鏈上生活節 Life on Chain!</title>
-
+    <link rel="shortcut icon" href="img/favicon.ico"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
     <!-- Bootstrap 4 -->
@@ -14,15 +14,17 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#" style="font-weight: bold; color: #68D8EE;">Life on Chain!</a>
+        <a class="navbar-brand" href="/" style="font-weight: bold; color: #68D8EE;">
+            <img src="img/lifeonchain.png" style="height: 24px;"/>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav float-right">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">首頁</a>
+                    <a class="nav-link" href="/">首頁</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="movie.html">電影</a>
@@ -44,21 +46,34 @@
     </nav>
 
     <div class="section-wrapper">
-        <section style="background-color: #FEFD54; height: 500px;">
-            
+        <section style="background-color: #FEFD54; height: 300px;">
+            <div class="section-container">
+                <div class="container" style="padding-top: 2rem;">
+                    <img src="img/the-last-thieves.png" class="intro-img img-fluid" />
+                </div>
+            </div>
         </section>
 
-        <section style="margin-top: -100px; z-index: 1; border-left: 100vw solid #69DAF0; border-top: 100px solid transparent; height: 1000px;">
-            
+        <section class="shape shape-left-right shape-blue" style="height: 1500px;">
+            <div class="section-container margin-150">
+                <div class="container">
+                    <iframe width="932" height="524" src="https://www.youtube.com/embed/M-5mF8-QgXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    <img src="img/movie-schedule.png" class="intro-img img-fluid" style="margin-top: 150px;" />
+                </div>
+            </div>
         </section>
 
-        <section style="margin-top: -100px; z-index: 1; border-left: 100vw solid #D6562E; border-top: 100px solid transparent; height: 500px;">
-            
+        <section class="shape shape-left-right shape-orange" style="height: 200px;">  
         </section>
     </div>
 
     <footer>
-        <p style="text-align: center; vertical-align: middle;">主辦單位：</p>
+        <div class="container">
+            <img class="organizer-img" src="img/organizer.png" />
+            <img src="img/zombit.png" />
+            <img src="img/alysida.png" />
+        </div>
     </footer>
 
     <!-- Bootstrap 4 -->
