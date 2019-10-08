@@ -6,8 +6,12 @@ nav, footer {
     background-color: #737373;
 }
 
+button:focus {
+    outline: 0;
+}
+
 footer {
-    height: 4rem;
+    height: 8rem;
     color: white;
     padding-top: .7rem;
     padding-bottom: .7rem;
@@ -15,6 +19,16 @@ footer {
 
 footer img {
     max-height: 2.6rem;
+}
+
+footer .container {
+    height: 100%;
+}
+
+footer .row {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar {
@@ -26,6 +40,14 @@ footer img {
 .navbar-nav {
     margin-top: .5rem;
     flex-direction: row;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .nav-link {
@@ -43,9 +65,9 @@ footer img {
     margin: 0 .5rem;
 }
 
-.nav-item.active a {
-    color: #FEFD54 !important;
-    border-bottom: 4px solid #D6562E;
+.nav-item.active {
+    color: #FFFF00 !important;
+    border-bottom: 4px solid #E14916;
 }
 
 .margin-100 {
@@ -77,12 +99,25 @@ footer img {
     text-align: center;
 }
 
+.section-container p {
+    text-align: left;
+    letter-spacing: 2px;
+}
+
+.section-container .row {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
 .shape-left-right .section-container {
     margin-left: -100vw;
 }
 
 .main-figure {
-    width: 100%;
+    height: 70vh;
+    background-image: url('/img/main-figure.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .shape {
@@ -101,24 +136,42 @@ footer img {
     border-top: 100px solid transparent;
 }
 
+.shape-bottom-right-left {
+    border-left: 100vw solid;
+    border-bottom: 100px solid transparent;
+}
+
+.shape-bottom-left-right {
+    border-right: 100vw solid;
+    border-bottom: 100px solid transparent;
+}
+
 .shape-yellow {
-    border-right-color: #FEFD54;
-    border-left-color: #FEFD54;
+    border-right-color: #FFFF00;
+    border-left-color: #FFFF00;
 }
 
 .shape-blue {
-    border-right-color: #69DAF0;
-    border-left-color: #69DAF0;
+    border-right-color: #1FD7EB;
+    border-left-color: #1FD7EB;
 }
 
 .shape-orange {
-    border-right-color: #D6562E;
-    border-left-color: #D6562E;
+    border-right-color: #E14916;
+    border-left-color: #E14916;
+}
+
+.trapezoid-img {
+    width: 100%;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .intro-img {
-    max-width: 450px;
-    max-height: 60px;
+    width: 100%;
+    max-width: 250px;
 }
 
 .market-img {
@@ -158,7 +211,7 @@ table.content-table, .content-table td, .lecture-schedule-table td {
 }
 
 .content-table td.orange {
-    background-color: #D6562E;
+    background-color: #E14916;
 }
 
 .lecture-schedule-table tr:nth-child(odd) td {
@@ -169,7 +222,78 @@ table.content-table, .content-table td, .lecture-schedule-table td {
     background-color: #99D0EA;
 }
 
+.lecture-schedule-table td:nth-child(2) {
+    text-align: left;
+    padding-left: 2.2rem;
+}
+
 .organizer-img {
     max-height: 1.5rem;
     margin-right: 12px;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.countdown-container {
+    display: flex;
+}
+
+.countdown-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.countdown-digit {
+    font-size: 40px;
+    text-align: center;
+    margin: 0 16px;
+}
+
+.countdown-text {
+    font-weight: 40;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-item.active {
+        border-bottom: initial;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        height: 16rem;
+    }
+
+    footer .row, footer .container {
+        height: initial;
+    }
 }

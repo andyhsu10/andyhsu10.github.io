@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>2019 鏈上生活節 Life on Chain!</title>
-    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
     <link rel="canonical" href="http://loc2019.lifeonchain.today/movie.html"/>
     <meta property="og:site_name" content="Life on Chain"/>
     <meta property="og:url" content="http://loc2019.lifeonchain.today/movie.html"/>
-    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.jpg"/>
+    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.png"/>
     <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 電影"/>
     <meta property="og:description" content="從今天起！鏈上生活節！"/>
 
     <meta name="title" content="2019 鏈上生活節 Life on Chain! - 電影"/>
     <meta name="description" content="從今天起！鏈上生活節！"/>
-    <meta name="keywords" content="2019,生活節,鏈上生活節,區塊鏈,聖人大盜,生活講堂,社群市集,alysida,zombit,lifeonchain,Life on Chain,blockchain"/>
+    <meta name="keywords" content="2019,生活節,鏈上生活節,區塊鏈,聖人大盜,鏈上講堂,生活市集,alysida,zombit,lifeonchain,Life on Chain,blockchain"/>
     <meta name="robots" content="index, follow">
 
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149288792-1"></script>
@@ -37,42 +37,30 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/" style="font-weight: bold; color: #68D8EE;">
-            <img src="img/lifeonchain.png" style="height: 24px;"/>
+        <a class="navbar-brand" href="/" style="font-weight: bold; color: #1FD7EB;">
+            <img src="/img/lifeonchain.png" style="height: 24px;"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">首頁</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="movie.html">電影</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="lecture.html">生活講堂</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="market.html">社群市集</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="location.html">活動地點</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ticket.html">購票資訊</a>
-                </li>
-            </ul>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="/">首頁</a>
+                <a class="nav-item nav-link" href="/about/">關於鏈上生活</a>
+                <a class="nav-item nav-link active" href="/activity/">活動內容</a>
+                <a class="nav-item nav-link" href="/location/">活動地點</a>
+                <a class="nav-item nav-link" href="/ticket/">售票資訊</a>
+                <a class="nav-item nav-link" href="/partner/">合作夥伴</a>
+            </div>
         </div>
     </nav>
 
     <div class="section-wrapper">
-        <section style="background-color: #FEFD54; height: 300px;">
+        <section style="background-color: #FFFF00; height: 300px;">
             <div class="section-container">
                 <div class="container" style="padding-top: 2rem;">
-                    <img src="img/the-last-thieves.png" class="intro-img img-fluid" />
+                    <img src="/img/the-last-thieves.png" class="intro-img img-fluid" />
                 </div>
             </div>
         </section>
@@ -82,7 +70,7 @@
                 <div class="container">
                     <iframe width="932" height="524" src="https://www.youtube.com/embed/M-5mF8-QgXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                    <img src="img/movie-schedule.png" class="intro-img img-fluid" style="margin-top: 150px;" />
+                    <img src="/img/movie-schedule.png" class="intro-img img-fluid" style="margin-top: 150px;" />
                 </div>
             </div>
         </section>
@@ -93,18 +81,45 @@
 
     <footer>
         <div class="container">
-            <img class="organizer-img" src="img/organizer.png" />
-            <img src="img/zombit.png" />
-            <img src="img/alysida.png" />
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="organizer-img" src="/img/organizer.png" />
+                    <img src="/img/lifeonchain-logo.png" />
+                </div>
+
+                <div class="col-md-6">
+                    <div class="countdown-container">
+                        <div class="countdown-block">
+                            <p class="countdown-digit" id="countdown_day">00</p>
+                            <p class="countdown-text">Days</p>
+                        </div>
+                        <div class="countdown-block">
+                            <p class="countdown-digit" id="countdown_hour">00</p>
+                            <p class="countdown-text">Hours</p>
+                        </div>
+                        <div class="countdown-block">
+                            <p class="countdown-digit" id="countdown_min">00</p>
+                            <p class="countdown-text">Minutes</p>
+                        </div>
+                        <div class="countdown-block">
+                            <p class="countdown-digit" id="countdown_sec">00</p>
+                            <p class="countdown-text">Seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <!-- Bootstrap 4 -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Custom scripts -->
+    <script src="/js/main.js"></script>
 
 </body>
 </html>
