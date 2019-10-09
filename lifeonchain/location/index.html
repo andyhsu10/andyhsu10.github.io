@@ -127,7 +127,9 @@
 
     <script>
         $(document).ready(function(){
-            changeHeight();
+            setTimeout(function(){
+                changeHeight();
+            }, 500);
         });
 
         $(window).on('resize', function(){
