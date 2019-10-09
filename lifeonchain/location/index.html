@@ -9,7 +9,7 @@
     <link rel="canonical" href="http://loc2019.lifeonchain.today/location/"/>
     <meta property="og:site_name" content="Life on Chain"/>
     <meta property="og:url" content="http://loc2019.lifeonchain.today/location/"/>
-    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.png"/>
+    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.jpg"/>
     <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 活動地點"/>
     <meta property="og:description" content="從今天起！鏈上生活節！"/>
 
@@ -57,22 +57,21 @@
     </nav>
 
     <div class="section-wrapper">
-        <section class="shape shape-bottom-left-right shape-yellow" style="height: 200px;">
+        <section class="shape shape-bottom-left-right shape-yellow" id="location_logo_section">
             <div class="section-container" style="margin-top: 100px;">
                 <div class="container" style="padding-top: 2rem;">
-                    <img src="/img/location.png" class="intro-img img-fluid" />
+                    <img src="/img/location-logo.png" class="intro-img img-fluid" id="location_logo_img" />
                 </div>
             </div>
         </section>
 
-        <section style="margin-top: -100px; z-index: 0;">
-            <img class="main-figure" src="/img/location.jpg"/>
+        <section style="margin-top: -100px; z-index: 0; width: 100vw; height: 60vh; max-height: 600px; background-image: url('/img/location.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;" id="location_img">
         </section>
     
-        <section class="shape shape-right-left shape-blue" style="height: 700px;">
+        <section class="shape shape-right-left shape-blue" id="map_section">
             <div class="section-container">
-                <div class="container" style="padding-top: 50px;">
-                    <img src="/img/map.png" class="img-fluid" />
+                <div class="container">
+                    <img src="/img/map.png" class="img-fluid" id="map_img" />
                 </div>
             </div>
         </section>
@@ -125,6 +124,24 @@
 
     <!-- Custom scripts -->
     <script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            changeHeight();
+        });
+
+        $(window).on('resize', function(){
+            changeHeight();
+        });
+
+        function changeHeight(){
+            var height = $(window).height();
+            var width = $(window).width();
+            $('#location_logo_section').css('height', $('#location_logo_img').height()+parseInt($('#location_logo_section').css('border-bottom-width'))+30+'px');
+            $('#location_img').css('margin-top', '-'+$('#location_logo_section').css('border-bottom-width'));
+            $('#map_section').css('height', $('#map_img').height()+parseInt($('#map_section').css('border-top-width'))+30+'px');
+        }
+    </script>
 
 </body>
 </html>

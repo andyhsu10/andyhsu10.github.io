@@ -114,8 +114,8 @@ footer .row {
 }
 
 .main-figure {
-    height: 70vh;
-    background-image: url('/img/main-figure.png');
+    height: 60vh;
+    background-image: url('/img/main-figure.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -159,6 +159,18 @@ footer .row {
 .shape-orange {
     border-right-color: #E14916;
     border-left-color: #E14916;
+}
+
+.shape-fill-yellow {
+    background-color: #FFFF00;
+}
+
+.shape-fill-blue {
+    background-color: #1FD7EB;
+}
+
+.shape-fill-orange {
+    background-color: #E14916;
 }
 
 .trapezoid-img {
@@ -249,6 +261,8 @@ table.content-table, .content-table td, .lecture-schedule-table td {
 
 .countdown-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .countdown-block {
@@ -290,10 +304,24 @@ table.content-table, .content-table td, .lecture-schedule-table td {
 
 @media (max-width: 768px) {
     footer {
-        height: 16rem;
+        height: 10rem;
     }
 
     footer .row, footer .container {
         height: initial;
+    }
+
+    .countdown-container {
+        margin-top: 12px;
+    }
+
+    .main-figure {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-figure {
+        height: 30vh;
     }
 }

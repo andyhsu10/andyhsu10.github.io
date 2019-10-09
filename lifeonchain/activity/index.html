@@ -9,7 +9,7 @@
     <link rel="canonical" href="http://loc2019.lifeonchain.today/activity/"/>
     <meta property="og:site_name" content="Life on Chain"/>
     <meta property="og:url" content="http://loc2019.lifeonchain.today/activity/"/>
-    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.png"/>
+    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.jpg"/>
     <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 活動內容"/>
     <meta property="og:description" content="從今天起！鏈上生活節！"/>
 
@@ -57,7 +57,7 @@
     </nav>
 
     <div class="section-wrapper">
-        <section class="shape shape-right-left shape-yellow" style="height: 350px;">
+        <section class="shape shape-fill-yellow" style="height: 650px;">
             <div class="section-container">
                 <div class="row">
                     
@@ -65,19 +65,31 @@
             </div>
         </section>
 
-        <section class="shape shape-right-left shape-blue" style="height: 900px;">
-            <div class="section-container">
-                <div class="row">
-                    
+        <section class="shape shape-right-left shape-blue" id="activity_section">
+            <div class="section-container" style="margin-top: -450px;">
+                <div class="row" id="activity_row">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/img/movie-block.png"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/img/market-block.png"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/img/lecture-block.png"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/img/community-block.png"/>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="shape shape-right-left shape-yellow" style="height: 550px;">
+        <section class="shape shape-right-left shape-yellow" id="signup_section" style="height: 50vw;">
             <div class="section-container">
-                <div class="row">
-                    
-                </div>
+                <img src="/img/activity-signup.png" class="img-fluid" id="signup_img">
             </div>
         </section>
     </div>
@@ -122,7 +134,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- Custom scripts -->
+    <script>
+        var slope = 0.28;
+    </script>
+
     <script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            changeHeight();
+        });
+
+        $(window).on('resize', function(){
+            changeHeight();
+        });
+
+        function changeHeight(){
+            var height = $(window).height();
+            var width = $(window).width();
+            if(width < 768){
+                $('#activity_section').css('height', $('#activity_row').height()+120+'px');
+            }
+            else if(width < 992){
+                $('#activity_section').css('height', $('#activity_row').height()+parseInt($('#activity_section').css('border-top-width'))*0.1+'px');
+            }
+            else{
+                $('#activity_section').css('height', $('#activity_row').height()+parseInt($('#activity_section').css('border-top-width'))*0.9+'px');
+            }
+            $('#signup_section').css('height', $('#signup_img').height()+parseInt($('#signup_section').css('border-top-width'))/2+'px')
+            $('#signup_img').css('margin-top', -parseInt($('#signup_section').css('border-top-width'))*0.5+'px')
+        }
+    </script>
 
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="canonical" href="http://loc2019.lifeonchain.today/ticket/"/>
     <meta property="og:site_name" content="Life on Chain"/>
     <meta property="og:url" content="http://loc2019.lifeonchain.today/ticket/"/>
-    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.png"/>
+    <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.jpg"/>
     <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 售票資訊"/>
     <meta property="og:description" content="從今天起！鏈上生活節！"/>
 
@@ -57,7 +57,37 @@
     </nav>
 
     <div class="section-wrapper">
-        <section class="shape shape-right-left shape-yellow" style="height: 350px;">
+        <section class="shape shape-fill-yellow" id="ticket_logo_section" style="height: 500px;">
+            <div class="section-container">
+                <div class="container" style="padding-top: 120px;">
+                    <img src="/img/ticket-logo.png" class="intro-img img-fluid" id="ticket_logo_img" />
+                </div>
+            </div>
+        </section>
+
+        <section class="shape shape-right-left shape-blue" id="ticket_section" style="height: 1200px;">
+            <div class="section-container" id="section_container">
+                <div class="row" id="ticket_row">
+                    <div class="col-lg-3 col-md-6">
+                        <img class="img-fluid" src="/img/ticket-A.png"/>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <img class="img-fluid" src="/img/ticket-B.png"/>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <img class="img-fluid" src="/img/ticket-C.png"/>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <img class="img-fluid" src="/img/ticket-D.png"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shape shape-right-left shape-yellow" style="height: 250px;">
             <div class="section-container">
                 <div class="row">
                     
@@ -65,19 +95,9 @@
             </div>
         </section>
 
-        <section class="shape shape-right-left shape-blue" style="height: 700px;">
+        <section class="shape-fill-yellow">
             <div class="section-container">
-                <div class="row">
-                    
-                </div>
-            </div>
-        </section>
-
-        <section class="shape shape-right-left shape-yellow" style="height: 1500px;">
-            <div class="section-container">
-                <div class="row">
-                    
-                </div>
+                <img src="/img/ticket-QA.png" class="img-fluid"/>
             </div>
         </section>
     </div>
@@ -122,7 +142,38 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- Custom scripts -->
+    <script>
+        var slope = 0.28;
+    </script>
+
     <script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            changeHeight();
+        });
+
+        $(window).on('resize', function(){
+            changeHeight();
+        });
+
+        function changeHeight(){
+            var height = $(window).height();
+            var width = $(window).width();
+            $('#ticket_logo_section').css('height', $('#ticket_logo_img').height()+parseInt($('#ticket_section').css('border-top-width'))+30+'px');
+            $('#section_container').css('margin-top', parseInt($('#ticket_section').css('margin-top'))*0.6+'px')
+            if(width < 768){
+                $('#ticket_logo_section').css('height', $('#ticket_logo_img').height()+parseInt($('#ticket_section').css('border-top-width'))+130+'px');
+                $('#ticket_section').css('height', $('#ticket_row').height()+120+'px');
+            }
+            else if(width >= 992){
+                $('#ticket_section').css('height', $('#ticket_row').height()+parseInt($('#ticket_section').css('border-top-width'))*1.2+'px');
+            }
+            else{
+                $('#ticket_section').css('height', $('#ticket_row').height()+parseInt($('#ticket_section').css('border-top-width'))*0.9+'px');
+            }
+        }
+    </script>
 
 </body>
 </html>

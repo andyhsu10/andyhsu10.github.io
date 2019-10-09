@@ -1,3 +1,6 @@
+if (!slope) 
+  var slope = 0.08;
+
 $(document).ready(function(){
     updateSlope();
 });
@@ -7,7 +10,6 @@ $(window).on('resize', function(){
 });
 
 function updateSlope(){
-    var slope = 0.08;
     var windowWidth = $(window).width();
     $('.shape-right-left, .shape-left-right').css('margin-top', (-windowWidth*slope)+'px');
     $('.shape-right-left, .shape-left-right').css('border-top-width', (windowWidth*slope)+'px');
@@ -16,13 +18,23 @@ function updateSlope(){
     $('.trapezoid-img-left').each(function(){
         var width = $(this).width();
         var height = $(this).height();
-        $(this).css('clip-path', 'polygon(0% '+(width*slope)+'px, 100% 0%,100% 100%,0% '+(height-width*slope)+'px)')
+        if(windowWidth < 768){
+          $(this).css('clip-path', 'polygon(0% '+(width*slope)+'px, 100% 0%, 100% 100%, 0% 100%')
+        }
+        else{
+          $(this).css('clip-path', 'polygon(0% '+(width*slope)+'px, 100% 0%, 100% 100%, 0% '+(height-width*slope)+'px)')
+        }
     });
 
     $('.trapezoid-img-right').each(function(){
         var width = $(this).width();
         var height = $(this).height();
-        $(this).css('clip-path', 'polygon(0% 0%, 100% '+(width*slope)+'px, 100% '+(height-width*slope)+'px, 0% 100%)')
+        if(windowWidth < 768){
+          $(this).css('clip-path', 'polygon(0% 0%, 100% '+(width*slope)+'px, 100% 100%, 0% 100%)')
+        }
+        else{
+          $(this).css('clip-path', 'polygon(0% 0%, 100% '+(width*slope)+'px, 100% '+(height-width*slope)+'px, 0% 100%)')
+        }
     });
 }
 
