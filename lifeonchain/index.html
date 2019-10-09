@@ -21,6 +21,9 @@
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Google Fonts - Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700&amp;subset=chinese-traditional" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -86,12 +89,12 @@
         <section class="shape shape-left-right shape-blue shape-intro" style="height: 550px;">
             <div class="section-container">
                 <div class="row">
-                    <div class="col-md-4 order-sm-2 order-2 col-lg-6">
+                    <div class="col-md-4 order-md-1 order-sm-2 order-2 col-lg-6">
                         <img src="/img/market-logo.png" class="intro-img img-fluid mt-4 mb-4" />
                         <p>當區塊鏈進入生活，會呈現什麼樣的樣貌？</p>
                         <p>到生活市集現場體驗區塊鏈支付方式、各類商販與小遊戲等，我們更與社群合作，在現場提供問題解惑與區塊鏈應用教學，以最新穎的模式享受美食與逛街體驗。</p>
                     </div>
-                    <div class="col-md-8 order-sm-1 order-1 col-lg-6">
+                    <div class="col-md-8 order-md-2 order-sm-1 order-1 col-lg-6">
                         <div class="trapezoid-img trapezoid-img-right" style="background-image: url('/img/market-page.jpg')"></div>
                     </div>
                 </div>
@@ -102,7 +105,7 @@
             <div class="section-container">
                 <div class="row">
                     <div class="col-md-8 col-lg-6">
-                        <div class="trapezoid-img trapezoid-img-left" style="background-image: url('/img/lecture-page.jpg'); background-position: initial;"></div>
+                        <div class="trapezoid-img trapezoid-img-left" style="background-image: url('/img/lecture-page.jpg');"></div>
                     </div>
                     <div class="col-md-4 col-lg-6">
                         <img src="/img/lecture-logo.png" class="intro-img img-fluid mt-4 mb-4" />
@@ -116,22 +119,21 @@
         <section class="shape shape-left-right shape-blue shape-intro" style="height: 550px;">
             <div class="section-container">
                 <div class="row">
-                    <div class="col-md-4 order-sm-2 order-2 col-lg-6">
-                        <img src="/img/content-logo.png" class="intro-img img-fluid mt-4 mb-4" />
-                        <p>食衣住行育樂，當區塊鏈進入生活，會呈現什麼樣的樣貌？實際體驗比特幣、各種密碼貨幣支付，好吃好玩的市集商家，各種區塊鏈問題解惑與使用教學，就在11/3生活市集。</p>
+                    <div class="col-md-4 order-md-1 order-sm-2 order-2 col-lg-6">
+                        <img src="/img/qa-logo.png" class="intro-img img-fluid mt-4 mb-4" />
+                        <p>「想要百萬好禮嗎？想要的就來玩吧！我把所有的財寶都放在鏈上生活節了！」你是不知道答案，還是害怕回答？</p>
+                        <p>趕緊找尋你的隊友，一起成為區塊鏈知識王，狩獵百萬獎金！</p>
                     </div>
-                    <div class="col-md-8 order-sm-1 order-1 col-lg-6">
-                        <div class="trapezoid-img trapezoid-img-right" style="background-image: url('/img/content-page.jpg')"></div>
+                    <div class="col-md-8 order-md-2 order-sm-1 order-1 col-lg-6">
+                        <div class="trapezoid-img trapezoid-img-right" style="background-image: url('/img/qa-page.jpg')"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="shape shape-right-left shape-yellow" style="height: 550px;">
+        <section class="shape shape-right-left shape-yellow" id="lifeonchain_page_section" style="height: 550px;">
             <div class="section-container">
-                <div class="row">
-                    
-                </div>
+                <img src="/img/lifeonchain-page.png" class="img-fluid" id="lifeonchain_page_img" />
             </div>
         </section>
 
@@ -139,7 +141,7 @@
             <div class="section-container">
                 <div class="row">
                     <div class="col-12">
-                        <img src="" class="img-fluid">
+                        <img src="" class="img-fluid" id="countdown_img">
                     </div>
                 </div>
             </div>
@@ -204,7 +206,7 @@
         $(document).ready(function(){
             setTimeout(function(){
                 changeHeight();
-            }, 500);
+            }, 350);
         });
 
         $(window).on('resize', function(){
@@ -222,6 +224,8 @@
                     $(this).css('height', $(this).find('.trapezoid-img').height()+$(this).find('.col-lg-6').height()+parseInt($(this).css('border-top-width'))*2+'px');
                 }
             });
+            $('#lifeonchain_page_img').css('margin-top', -parseInt($('#lifeonchain_page_section').css('border-top-width')));
+            $('#lifeonchain_page_section').css('height', $('#lifeonchain_page_img').height());
         }
     </script>
 </body>

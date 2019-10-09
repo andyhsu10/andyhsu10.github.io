@@ -100,7 +100,6 @@ footer .row {
 }
 
 .section-container p {
-    text-align: left;
     letter-spacing: 2px;
 }
 
@@ -114,7 +113,7 @@ footer .row {
 }
 
 .main-figure {
-    height: 60vh;
+    height: 80vh;
     background-image: url('/img/main-figure.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -182,8 +181,7 @@ footer .row {
 }
 
 .intro-img {
-    width: 100%;
-    max-width: 250px;
+    max-height: 60px;
 }
 
 .market-img {
