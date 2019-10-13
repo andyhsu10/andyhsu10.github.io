@@ -21,6 +21,9 @@
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Google Fonts - Noto Sans TC -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700&amp;subset=chinese-traditional" rel="stylesheet">
 
@@ -60,39 +63,46 @@
     </nav>
 
     <div class="section-wrapper">
-        <section class="shape shape-fill-yellow" style="height: 650px;">
-            <div class="section-container">
-                <div class="row">
-                    
-                </div>
-            </div>
-        </section>
+        <section class="shape shape-fill-yellow" style="height: 600px;"></section>
 
         <section class="shape shape-right-left shape-blue" id="activity_section">
             <div class="section-container" style="margin-top: -450px;">
-                <div class="row" id="activity_row">
+                <div class="container">
+                    <div class="row" id="activity_row">
                     <div class="col-md-6">
-                        <img class="img-fluid" src="/img/movie-block.png"/>
+                        <a href="movie/">
+                            <img class="img-fluid" src="/img/movie-block.png"/>
+                        </a>
                     </div>
 
                     <div class="col-md-6">
-                        <img class="img-fluid" src="/img/market-block.png"/>
+                        <a href="market/">
+                            <img class="img-fluid" src="/img/market-block.png"/>
+                        </a>
                     </div>
 
                     <div class="col-md-6">
-                        <img class="img-fluid" src="/img/lecture-block.png"/>
+                        <a href="lecture/">
+                            <img class="img-fluid" src="/img/lecture-block.png"/>
+                        </a>
                     </div>
 
                     <div class="col-md-6">
-                        <img class="img-fluid" src="/img/community-block.png"/>
+                        <a href="community/">
+                            <img class="img-fluid" src="/img/community-block.png"/>
+                        </a>
                     </div>
                 </div>
+                </div>
+                
             </div>
         </section>
 
         <section class="shape shape-right-left shape-yellow" id="signup_section" style="height: 50vw;">
             <div class="section-container">
-                <img src="/img/activity-signup.png" class="img-fluid" id="signup_img">
+                <a href="/ticket/">
+                    <img src="/img/activity-signup.png" class="img-fluid" id="signup_img">
+                </a>
             </div>
         </section>
     </div>
@@ -100,12 +110,12 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <img class="organizer-img" src="/img/organizer.png" />
                     <img src="/img/lifeonchain-logo.png" />
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="countdown-container">
                         <div class="countdown-block">
                             <p class="countdown-digit" id="countdown_day">00</p>
@@ -123,6 +133,26 @@
                             <p class="countdown-digit" id="countdown_sec">00</p>
                             <p class="countdown-text">Seconds</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="social-links">
+                        <li>
+                            <a href="https://www.facebook.com/LifeOnChain/" target="_blank" style="padding: 1px 13px;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://medium.com/%E9%8F%88%E4%B8%8A%E7%94%9F%E6%B4%BB" target="_blank" style="padding: 0px 5px;">
+                                <i class="fab fa-medium-m"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:brucesu@zombit.info" style="padding: 1px 6px;">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
                     </div>
                 </div>
             </div>
@@ -158,7 +188,7 @@
             var height = $(window).height();
             var width = $(window).width();
             if(width < 768){
-                $('#activity_section').css('height', $('#activity_row').height()+120+'px');
+                $('#activity_section').css('height', $('#activity_row').height()-120+'px');
             }
             else if(width < 992){
                 $('#activity_section').css('height', $('#activity_row').height()+parseInt($('#activity_section').css('border-top-width'))*0.1+'px');
@@ -166,8 +196,8 @@
             else{
                 $('#activity_section').css('height', $('#activity_row').height()+parseInt($('#activity_section').css('border-top-width'))*0.9+'px');
             }
-            $('#signup_section').css('height', $('#signup_img').height()+parseInt($('#signup_section').css('border-top-width'))/2+'px')
-            $('#signup_img').css('margin-top', -parseInt($('#signup_section').css('border-top-width'))*0.5+'px')
+            $('#signup_section').css('height', $('#signup_img').height()+parseInt($('#signup_section').css('border-top-width'))*0.2+'px')
+            $('#signup_img').css('margin-top', -parseInt($('#signup_section').css('border-top-width'))*0.8+'px')
         }
     </script>
 

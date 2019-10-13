@@ -21,6 +21,9 @@
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Google Fonts - Noto Sans TC -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700&amp;subset=chinese-traditional" rel="stylesheet">
 
@@ -61,21 +64,40 @@
 
     <div class="section-wrapper">
         <section class="shape shape-right-left shape-yellow" id="intro_section">
-            <div class="section-container">
+            <div class="section-container" style="padding: 30px 0;">
                 <div class="row mt-4" id="intro_row">
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
                         <img src="/img/lifeonchain-mark.png" class="img-fluid mb-4" />
                     </div>
-                    <div class="col-lg-6">
-                        <p>「鏈上生活」為區塊鏈社群所組成的團隊，旨在積極推動「區塊鏈進入生活」的核心理念，強調以「實際體驗」、「有趣好玩」、「生活應用」讓大眾直接認識區塊鏈，並進一步探索區塊鏈對於未來生活的可能性。</p>
-                        <p>從密碼龐克到區塊鏈，其背後的精神其實都沒有改變：「如何在兼顧隱私與安全之下，建立起一種分散式的信任關係？」區塊鏈進入生活，人與人的協作方式即將產生改變，讓我們一起進入鏈上新世界：從今天起，Life On Chain !</p>
+                    <div class="col-md-6" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div class="container">
+                            <p style="text-align: left;">「鏈上生活」為區塊鏈社群所組成的團隊，旨在積極推動「區塊鏈進入生活」的核心理念，強調以「實際體驗」、「有趣好玩」、「生活應用」讓大眾直接認識區塊鏈，並進一步探索區塊鏈對於未來生活的可能性。</p>
+                            <p style="text-align: left;">從密碼龐克到區塊鏈，其背後的精神其實都沒有改變：「如何在兼顧隱私與安全之下，建立起一種分散式的信任關係？」區塊鏈進入生活，人與人的協作方式即將產生改變，讓我們一起進入鏈上新世界：</p>
+                            <p>從今天起，Life On Chain !</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="shape shape-left-right shape-blue" style="height: 50vw;">
+        <section class="shape shape-left-right shape-blue" id="organizer_intro_section">
             <div class="section-container">
+                <div class="container intro">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <img src="/img/zombit.png" class="img-fluid mb-4">
+                            <p>桑幣筆記想要打造一個人人都可以輕鬆學習、資訊透明的區塊鏈資訊平台，成為新手最好的橋樑。</p>
+                            <p>Zombit 一詞來自殭屍（ Zombie） 與（Bitcoin） 的結合。</p>
+                            <p>殭屍與比特幣一樣，在一般大眾眼裏普遍來講都是負面的印象：<br>殭屍：恐怖、腐爛、病毒、瘋狂 ; 比特幣：詐騙、洗錢、泡沫</p>
+                            <p>但對我們來說是：<br>殭屍：執著毅力、團結、不眠不休; 比特幣：去中心化、自由、自主權</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/img/alysida.png" class="img-fluid mb-4">
+                            <p>ALYSIDA是「鏈」的探索者社群。從技術到法規，社會制度到經濟行為，社群、探索、傳播、實作，去中心化系統帶來的各種新面向都是我們關心的要點。</p>
+                            <p>「去中心化」、「鏈」的概念不只是科技的議題，更可能影響組織制度革新，形塑出新的生活型態。因社群而凝聚， ALYSIDA鏈社群自許為探索者、傳道士、與實踐家，矢志成為探索去中心化概念的先鋒；愛因斯坦說過：「想像力比知識更重要」， 讓我們懷抱想像，一同進入「去中心化」的新紀元。</p>
+                        </div>
+                    </div>
+                </div>
                 <img src="/img/comingsoon.png" class="img-fluid"/>
             </div>
         </section>
@@ -84,12 +106,12 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <img class="organizer-img" src="/img/organizer.png" />
                     <img src="/img/lifeonchain-logo.png" />
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="countdown-container">
                         <div class="countdown-block">
                             <p class="countdown-digit" id="countdown_day">00</p>
@@ -107,6 +129,26 @@
                             <p class="countdown-digit" id="countdown_sec">00</p>
                             <p class="countdown-text">Seconds</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="social-links">
+                        <li>
+                            <a href="https://www.facebook.com/LifeOnChain/" target="_blank" style="padding: 1px 13px;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://medium.com/%E9%8F%88%E4%B8%8A%E7%94%9F%E6%B4%BB" target="_blank" style="padding: 0px 5px;">
+                                <i class="fab fa-medium-m"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:brucesu@zombit.info" style="padding: 1px 6px;">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
                     </div>
                 </div>
             </div>
@@ -138,6 +180,7 @@
             var height = $(window).height();
             var width = $(window).width();
             $('#intro_section').css('height', $('#intro_row').height()+parseInt($('#intro_section').css('border-top-width'))*2+30+'px');
+            $('#organizer_intro_section').css('height', $('#organizer_intro_section').find('.section-container').height()+parseInt($('#organizer_intro_section').css('border-top-width'))+'px');
         }
     </script>
 

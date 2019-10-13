@@ -6,9 +6,9 @@
     <link rel="shortcut icon" href="/img/favicon.ico"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-    <link rel="canonical" href="http://loc2019.lifeonchain.today/market.html"/>
+    <link rel="canonical" href="http://loc2019.lifeonchain.today/activity/market/"/>
     <meta property="og:site_name" content="Life on Chain"/>
-    <meta property="og:url" content="http://loc2019.lifeonchain.today/market.html"/>
+    <meta property="og:url" content="http://loc2019.lifeonchain.today/activity/market/"/>
     <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.jpg"/>
     <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 生活市集"/>
     <meta property="og:description" content="從今天起！鏈上生活節！"/>
@@ -20,6 +20,9 @@
 
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Google Fonts - Noto Sans TC -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700&amp;subset=chinese-traditional" rel="stylesheet">
@@ -51,8 +54,8 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="/">首頁</a>
                 <a class="nav-item nav-link" href="/about/">關於鏈上生活</a>
-                <a class="nav-item nav-link" href="/activity/">活動內容</a>
-                <a class="nav-item nav-link active" href="/location/">活動地點</a>
+                <a class="nav-item nav-link active" href="/activity/">活動內容</a>
+                <a class="nav-item nav-link" href="/location/">活動地點</a>
                 <a class="nav-item nav-link" href="/ticket/">售票資訊</a>
                 <a class="nav-item nav-link" href="/partner/">合作夥伴</a>
             </div>
@@ -60,53 +63,36 @@
     </nav>
 
     <div class="section-wrapper">
-        <section style="margin-top: -100px; z-index: 1; border-right: 100vw solid #FEFD54; border-bottom: 100px solid transparent; height: 200px;">
+        <section class="shape shape-bottom-right-left shape-yellow" id="activity_logo_section">
             <div class="section-container" style="margin-top: 100px;">
-                <div class="container" style="padding-top: 2rem;">
-                    <img src="/img/market.png" class="intro-img img-fluid" />
+                <div class="container" style="padding-top: 2rem; text-align: left;">
+                    <img src="/img/market-detail-logo.png" class="intro-detail-img img-fluid" id="activity_logo_img" />
                 </div>
             </div>
         </section>
 
-        <section style="margin-top: -100px; z-index: 0;">
-            <img class="main-figure" src="/img/market.jpeg"/>
+        <section style="margin-top: -100px; z-index: 0; width: 100vw; height: 90vh; background-image: url('/img/market-page.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;" id="location_img">
         </section>
     
-        <section style="margin-top: -100px; z-index: 1; border-right: 100vw solid #69DAF0; border-top: 100px solid transparent; height: 500px;">
-            <div class="section-container margin-150">
+        <section class="shape shape-left-right shape-blue" id="activity_section">
+            <div class="section-container">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="/img/food.png" class="market-img img-fluid" />
-                        </div>
-
-                        <div class="col-md-6">
-                            <img src="/img/cloth.png" class="market-img img-fluid" />
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top: 100px;">
-                        <div class="col-md-6">
-                            <img src="/img/stay.png" class="market-img img-fluid" />
-                        </div>
-
-                        <div class="col-md-6">
-                            <img src="/img/traffic.png" class="market-img img-fluid" />
-                        </div>
-                    </div>
+                    <p class="mt-4">當區塊鏈進入生活，會呈現什麼樣的樣貌？</p>
+                    <p>到生活市集現場體驗區塊鏈支付方式、各類商販與小遊戲，鏈上生活節更與社群合作，在現場提供問題解惑與區塊鏈應用教學，以最新穎的模式享受美食與逛街體驗。</p>
                 </div>
-            </section>
+            </div>
         </section>
     </div>
 
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <img class="organizer-img" src="/img/organizer.png" />
                     <img src="/img/lifeonchain-logo.png" />
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="countdown-container">
                         <div class="countdown-block">
                             <p class="countdown-digit" id="countdown_day">00</p>
@@ -126,9 +112,29 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-4">
+                    <div class="social-links">
+                        <li>
+                            <a href="https://www.facebook.com/LifeOnChain/" target="_blank" style="padding: 1px 13px;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://medium.com/%E9%8F%88%E4%B8%8A%E7%94%9F%E6%B4%BB" target="_blank" style="padding: 0px 5px;">
+                                <i class="fab fa-medium-m"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:brucesu@zombit.info" style="padding: 1px 6px;">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </footer>  
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -138,7 +144,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- Custom scripts -->
+    <script>
+        var slope = 0.12;
+    </script>
+
     <script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                changeHeight();
+            }, 350);
+        });
+
+        $(window).on('resize', function(){
+            changeHeight();
+        });
+
+        function changeHeight(){
+            var height = $(window).height();
+            var width = $(window).width();
+            $('#activity_logo_section').css('height', $('#activity_logo_img').height()+70+'px');
+            $('#location_img').css('margin-top', '-'+$('#activity_logo_section').css('border-bottom-width'));
+            $('#activity_section').css('height', $('#activity_section').find('.section-container').height()+parseInt($('#activity_section').css('border-top-width'))+60+'px');
+        }
+    </script>
 
 </body>
 </html>

@@ -6,14 +6,14 @@
     <link rel="shortcut icon" href="/img/favicon.ico"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-    <link rel="canonical" href="http://loc2019.lifeonchain.today/location/"/>
+    <link rel="canonical" href="http://loc2019.lifeonchain.today/activity/community/"/>
     <meta property="og:site_name" content="Life on Chain"/>
-    <meta property="og:url" content="http://loc2019.lifeonchain.today/location/"/>
+    <meta property="og:url" content="http://loc2019.lifeonchain.today/activity/community/"/>
     <meta property="og:image" content="http://loc2019.lifeonchain.today/img/main-figure.jpg"/>
-    <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 活動地點"/>
+    <meta property="og:title" content="2019 鏈上生活節 Life on Chain! - 社群活動"/>
     <meta property="og:description" content="從今天起！鏈上生活節！"/>
 
-    <meta name="title" content="2019 鏈上生活節 Life on Chain! - 活動地點"/>
+    <meta name="title" content="2019 鏈上生活節 Life on Chain! - 社群活動"/>
     <meta name="description" content="從今天起！鏈上生活節！"/>
     <meta name="keywords" content="2019,生活節,鏈上生活節,區塊鏈,聖人大盜,鏈上講堂,生活市集,alysida,zombit,lifeonchain,Life on Chain,blockchain"/>
     <meta name="robots" content="index, follow">
@@ -54,8 +54,8 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="/">首頁</a>
                 <a class="nav-item nav-link" href="/about/">關於鏈上生活</a>
-                <a class="nav-item nav-link" href="/activity/">活動內容</a>
-                <a class="nav-item nav-link active" href="/location/">活動地點</a>
+                <a class="nav-item nav-link active" href="/activity/">活動內容</a>
+                <a class="nav-item nav-link" href="/location/">活動地點</a>
                 <a class="nav-item nav-link" href="/ticket/">售票資訊</a>
                 <a class="nav-item nav-link" href="/partner/">合作夥伴</a>
             </div>
@@ -63,28 +63,26 @@
     </nav>
 
     <div class="section-wrapper">
-        <section class="shape shape-bottom-left-right shape-yellow" id="location_logo_section">
-            <div class="section-container" style="margin-top: 100px; margin-left: 0;">
-                <div class="container" style="padding-top: 2rem;">
-                    <img src="/img/location-logo.png" class="intro-img img-fluid" id="location_logo_img" />
+        <section class="shape shape-bottom-right-left shape-yellow" id="activity_logo_section">
+            <div class="section-container" style="margin-top: 100px;">
+                <div class="container" style="padding-top: 2rem; text-align: left;">
+                    <img src="/img/qa-detail-logo.png" class="intro-detail-img img-fluid" id="activity_logo_img" />
                 </div>
             </div>
         </section>
 
-        <section style="margin-top: -100px; z-index: 0; width: 100vw; height: 75vh; max-height: 600px; background-image: url('/img/location.jpg'); background-position: center 70%; background-repeat: no-repeat; background-size: cover;" id="location_img">
+        <section style="margin-top: -100px; z-index: 0; width: 100vw; height: 90vh; background-image: url('/img/qa-page.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;" id="location_img">
         </section>
     
-        <section class="shape shape-right-left shape-blue" id="map_section">
+        <section class="shape shape-left-right shape-blue" id="activity_section">
             <div class="section-container">
                 <div class="container">
-                    <img src="/img/map.png" class="img-fluid" id="map_img" />
+                    <p class="mt-4">當區塊鏈進入生活，會呈現什麼樣的樣貌？</p>
+                    <p>到生活市集現場體驗區塊鏈支付方式、各類商販與小遊戲，鏈上生活節更與社群合作，在現場提供問題解惑與區塊鏈應用教學，以最新穎的模式享受美食與逛街體驗。</p>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="map-responsive">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7034770569066!2d121.52721081498791!3d25.04413514403901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96523e0246d%3A0xf1c9276707165c71!2sHuashan%201914%20Creative%20Park!5e0!3m2!1sen!2stw!4v1570543853632!5m2!1sen!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <a href="https://forms.gle/iVi5jzcEXeECMMMi8" target="_blank">
+                    <img src="/img/qa-signup.png" class="img-fluid"/>
+                </a>
             </div>
         </section>
     </div>
@@ -149,6 +147,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- Custom scripts -->
+    <script>
+        var slope = 0.12;
+    </script>
+
     <script src="/js/main.js"></script>
 
     <script>
@@ -165,9 +167,9 @@
         function changeHeight(){
             var height = $(window).height();
             var width = $(window).width();
-            $('#location_logo_section').css('height', $('#location_logo_img').height()+parseInt($('#location_logo_section').css('border-bottom-width'))+30+'px');
-            $('#location_img').css('margin-top', '-'+$('#location_logo_section').css('border-bottom-width'));
-            $('#map_section').css('height', $('#map_img').height()+parseInt($('#map_section').css('border-top-width'))+30+'px');
+            $('#activity_logo_section').css('height', $('#activity_logo_img').height()+70+'px');
+            $('#signup_section').css('height', $('#signup_img').height()+parseInt($('#signup_section').css('border-top-width'))+30+'px');
+            $('#activity_section').css('height', $('#activity_section').find('.section-container').height()+parseInt($('#activity_section').css('border-top-width'))+25+'px');
         }
     </script>
 
