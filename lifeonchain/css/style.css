@@ -189,6 +189,15 @@ footer .row {
     background-color: #E14916;
 }
 
+.shape-intro p {
+    text-align: left;
+    width: 100%;
+}
+
+.qa-page {
+    background-image: url('/img/qa-page.jpg');
+}
+
 .trapezoid-img {
     width: 100%;
     height: 350px;
@@ -202,8 +211,8 @@ footer .row {
     text-align: left;
 }
 
-.intro img {
-    max-height: 100px;
+.intro .img-fluid {
+    max-height: 80px;
 }
 
 .intro-img {
@@ -357,6 +366,11 @@ footer .row {
     margin-top: 6px;
 }
 
+#lifeonchain_page_section iframe {
+    width: 100%;
+    min-height: 525px;
+}
+
 @media (max-width: 992px) {
     .navbar-nav {
         flex-direction: column;
@@ -374,6 +388,10 @@ footer .row {
 
     .nav-item.active {
         border-bottom: initial;
+    }
+
+    #lifeonchain_page_section iframe {
+        min-height: 386px;
     }
 }
 
@@ -397,10 +415,23 @@ footer .row {
     .main-figure {
         height: 40vh;
     }
+
+    #lifeonchain_page_section iframe {
+        min-height: 286px;
+    }
 }
 
 @media (max-width: 576px) {
     .main-figure {
         height: 30vh;
+    }
+
+    .qa-page {
+        background-position: left top !important;
+        background-image: url('/img/qa-page-mobile.jpg') !important;
+    }
+
+    #lifeonchain_page_section iframe {
+        min-height: 55vw;
     }
 }

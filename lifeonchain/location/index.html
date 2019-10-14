@@ -63,18 +63,18 @@
     </nav>
 
     <div class="section-wrapper">
-        <section class="shape shape-bottom-left-right shape-yellow" id="location_logo_section">
+        <section class="shape shape-fill-yellow" id="location_logo_section">
             <div class="section-container" style="margin-top: 100px; margin-left: 0;">
-                <div class="container" style="padding-top: 2rem;">
+                <div class="container" style="padding: 2rem 0;">
                     <img src="/img/location-logo.png" class="intro-img img-fluid" id="location_logo_img" />
                 </div>
             </div>
         </section>
 
-        <section style="margin-top: -100px; z-index: 0; width: 100vw; height: 75vh; max-height: 600px; background-image: url('/img/location.jpg'); background-position: center 70%; background-repeat: no-repeat; background-size: cover;" id="location_img">
+        <section style="width: 100vw; height: 75vh; max-height: 700px; background-image: url('/img/location.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
         </section>
     
-        <section class="shape shape-right-left shape-blue" id="map_section">
+        <section class="shape shape-fill-blue" id="map_section">
             <div class="section-container">
                 <div class="container">
                     <img src="/img/map.png" class="img-fluid" id="map_img" />
@@ -165,8 +165,6 @@
         function changeHeight(){
             var height = $(window).height();
             var width = $(window).width();
-            $('#location_logo_section').css('height', $('#location_logo_img').height()+parseInt($('#location_logo_section').css('border-bottom-width'))+30+'px');
-            $('#location_img').css('margin-top', '-'+$('#location_logo_section').css('border-bottom-width'));
             $('#map_section').css('height', $('#map_img').height()+parseInt($('#map_section').css('border-top-width'))+30+'px');
         }
     </script>

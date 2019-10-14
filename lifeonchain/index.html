@@ -143,7 +143,7 @@
                                 <p>趕緊找尋你的隊友，一起成為區塊鏈知識王，狩獵百萬獎金！</p>
                             </div>
                             <div class="col-md-8 order-md-2 order-sm-1 order-1 col-lg-6">
-                                <div class="trapezoid-img trapezoid-img-right" style="background-image: url('/img/qa-page.jpg')"></div>
+                                <div class="trapezoid-img trapezoid-img-right qa-page"></div>
                             </div>
                         </div>
                     </a>
@@ -151,9 +151,12 @@
             </div>
         </section>
 
-        <section class="shape shape-right-left shape-yellow" id="lifeonchain_page_section" style="height: 550px;">
+        <section class="shape shape-right-left shape-yellow" id="lifeonchain_page_section">
             <div class="section-container">
-                <img src="/img/lifeonchain-page.png" class="img-fluid" id="lifeonchain_page_img" />
+                <!--<img src="/img/lifeonchain-page.png" class="img-fluid" id="lifeonchain_page_img" />-->
+                <div class="container">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FLifeOnChain%2Fvideos%2F2608196529249386%2F&show_text=0&width=560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                </div>
             </div>
         </section>
 
@@ -164,7 +167,7 @@
                     <div class="col-12">
                         <img src="" class="img-fluid" id="countdown_img">
                         <a href="/ticket">
-                            <img class="img-fluid" style="max-width: 300px; width: 100%;" src="/img/signup.png"/>
+                            <img class="img-fluid" style="max-width: 300px; width: 100%;" src="/img/signup.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
                         </a>
                     </div>
                 </div>
@@ -262,15 +265,18 @@
             var height = $(window).height();
             var width = $(window).width();
             $('.shape-intro').each(function(){
-                if(width > 768){
-                    $(this).css('height', $(this).find('.col-md-8.col-lg-6').height()+parseInt($(this).css('border-top-width'))*2+'px');
-                }
-                else{
-                    $(this).css('height', $(this).find('.col-md-8.col-lg-6').height()+$(this).find('.col-lg-6').height()+parseInt($(this).css('border-top-width'))*2+'px');
-                }
+                $(this).css('height', $(this).find('.row').height()+parseInt($(this).css('border-top-width'))*2+'px');
             });
             $('#lifeonchain_page_img').css('margin-top', -parseInt($('#lifeonchain_page_section').css('border-top-width')));
-            $('#lifeonchain_page_section').css('height', $('#lifeonchain_page_img').height());
+            $('#lifeonchain_page_section').css('height', $('#lifeonchain_page_section').find('.section-container').height()+parseInt($('#lifeonchain_page_section').css('border-top-width'))*2);
+        }
+
+        function hover(element) {
+            element.setAttribute('src', '/img/signup-hover.png');
+        }
+
+        function unhover(element) {
+            element.setAttribute('src', '/img/signup.png');
         }
     </script>
 </body>
