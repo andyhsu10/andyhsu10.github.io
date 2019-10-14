@@ -19,6 +19,14 @@ a:hover {
     text-decoration: none;
 }
 
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    text-align: left;
+}
+
 footer {
     height: 8rem;
     color: white;
@@ -213,6 +221,7 @@ footer .row {
 
 .intro .img-fluid {
     max-height: 80px;
+    min-height: 80px;
 }
 
 .intro-img {
@@ -366,9 +375,20 @@ footer .row {
     margin-top: 6px;
 }
 
-#lifeonchain_page_section iframe {
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+    
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 525px;
+    height: 100%;
 }
 
 @media (max-width: 992px) {
@@ -388,10 +408,6 @@ footer .row {
 
     .nav-item.active {
         border-bottom: initial;
-    }
-
-    #lifeonchain_page_section iframe {
-        min-height: 386px;
     }
 }
 
@@ -415,10 +431,6 @@ footer .row {
     .main-figure {
         height: 40vh;
     }
-
-    #lifeonchain_page_section iframe {
-        min-height: 286px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -429,9 +441,5 @@ footer .row {
     .qa-page {
         background-position: left top !important;
         background-image: url('/img/qa-page-mobile.jpg') !important;
-    }
-
-    #lifeonchain_page_section iframe {
-        min-height: 55vw;
     }
 }

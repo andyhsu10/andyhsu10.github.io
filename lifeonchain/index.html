@@ -154,8 +154,10 @@
         <section class="shape shape-right-left shape-yellow" id="lifeonchain_page_section">
             <div class="section-container">
                 <!--<img src="/img/lifeonchain-page.png" class="img-fluid" id="lifeonchain_page_img" />-->
-                <div class="container">
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FLifeOnChain%2Fvideos%2F2608196529249386%2F&show_text=0&width=560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                <div class="container" style="padding: 2rem 0;">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/LA_lLRA8AVk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </section>
@@ -163,14 +165,14 @@
         <section class="shape shape-right-left shape-blue" style="height: 50vw;">
             <div class="section-container">
                 <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <img src="" class="img-fluid" id="countdown_img">
-                        <a href="/ticket">
-                            <img class="img-fluid" style="max-width: 300px; width: 100%;" src="/img/signup.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
-                        </a>
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="" class="img-fluid" id="countdown_img">
+                            <a href="/ticket">
+                                <img class="img-fluid" style="max-width: 300px; width: 100%;" src="/img/signup.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -269,14 +271,6 @@
             });
             $('#lifeonchain_page_img').css('margin-top', -parseInt($('#lifeonchain_page_section').css('border-top-width')));
             $('#lifeonchain_page_section').css('height', $('#lifeonchain_page_section').find('.section-container').height()+parseInt($('#lifeonchain_page_section').css('border-top-width'))*2);
-        }
-
-        function hover(element) {
-            element.setAttribute('src', '/img/signup-hover.png');
-        }
-
-        function unhover(element) {
-            element.setAttribute('src', '/img/signup.png');
         }
     </script>
 </body>

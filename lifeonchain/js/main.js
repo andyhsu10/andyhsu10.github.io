@@ -69,3 +69,11 @@ function format(num){
       return '0'+num;
     return num
 }
+
+function hover(element) {
+  element.setAttribute('src', '/img/signup-hover.png');
+}
+
+function unhover(element) {
+  element.setAttribute('src', '/img/signup.png');
+}
