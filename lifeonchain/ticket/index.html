@@ -74,28 +74,32 @@
         <section class="shape shape-right-left shape-blue" id="ticket_section" style="height: 1200px;">
             <div class="section-container" id="section_container">
                 <div class="row" id="ticket_row">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-sm-6" style="display: flex; align-items: center;">
                         <a href="https://www.accupass.com/event/1910040534498487578350" target="_blank">
                             <img class="img-fluid" src="/img/ticket-A.png"/>
                         </a>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-sm-6" style="display: flex; align-items: center;">
                         <a href="https://www.accupass.com/event/1910040534498487578350" target="_blank">
                             <img class="img-fluid" src="/img/ticket-B.png"/>
                         </a>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-sm-6" style="display: flex; align-items: center;">
                         <a href="https://www.accupass.com/event/1910040534498487578350" target="_blank">
                             <img class="img-fluid" src="/img/ticket-C.png"/>
                         </a>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-sm-6" style="display: flex; align-items: center;">
                         <a href="https://www.accupass.com/event/1910040534498487578350" target="_blank">
                             <img class="img-fluid" src="/img/ticket-D.png"/>
                         </a>
+                    </div>
+
+                    <div class="col-sm-12 mt-4" style="text-align: left;">
+                        <p>註：鏈上生活幣為生活市集中使用區塊鏈之消費點數，可以與台幣一比一等值購買市集中商品。</p>
                     </div>
                 </div>
             </div>
@@ -109,7 +113,7 @@
                     <img src="/img/product-logo.png" class="intro-img img-fluid" style="margin-bottom: 4rem;"/>
                     <img src="/img/products.jpg" class="img-fluid"/>
                 </div>
-                <a href="https://forms.gle/iVi5jzcEXeECMMMi8" target="_blank">
+                <a href="https://forms.gle/wsPWXboMwcg5tzwP9" target="_blank">
                     <img src="/img/ticket-QA.png" class="img-fluid"/>
                 </a>
             </div>
@@ -196,17 +200,14 @@
         function changeHeight(){
             var height = $(window).height();
             var width = $(window).width();
-            $('#ticket_logo_section').css('height', $('#ticket_logo_img').height()+parseInt($('#ticket_section').css('border-top-width'))+30+'px');
+            $('#ticket_logo_section').css('height', $('#ticket_logo_img').height()+parseInt($('#ticket_section').css('border-top-width'))+50+'px');
             $('#section_container').css('margin-top', parseInt($('#ticket_section').css('margin-top'))*0.6+'px')
             if(width < 768){
                 $('#ticket_logo_section').css('height', $('#ticket_logo_img').height()+parseInt($('#ticket_section').css('border-top-width'))+130+'px');
-                $('#ticket_section').css('height', $('#ticket_row').height()+120+'px');
-            }
-            else if(width >= 992){
-                $('#ticket_section').css('height', $('#ticket_row').height()+parseInt($('#ticket_section').css('border-top-width'))*1.2+'px');
+                $('#ticket_section').css('height', $('#ticket_row').height()+parseInt($('#ticket_section').css('border-top-width'))*1.5);
             }
             else{
-                $('#ticket_section').css('height', $('#ticket_row').height()+parseInt($('#ticket_section').css('border-top-width'))*0.9+'px');
+                $('#ticket_section').css('height', $('#ticket_row').height()+parseInt($('#ticket_section').css('border-top-width'))*1.2+'px');
             }
         }
     </script>

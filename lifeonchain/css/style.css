@@ -182,6 +182,11 @@ footer .row {
     border-left-color: #E14916;
 }
 
+.shape-fill-white {
+    height: initial;
+    background-color: white;
+}
+
 .shape-fill-yellow {
     height: initial;
     background-color: #FFFF00;
@@ -321,6 +326,10 @@ footer .row {
     position:absolute;
 }
 
+.partner-section .container {
+    padding: 45px 0 30px;
+}
+
 .countdown-container {
     display: flex;
     align-items: center;
@@ -441,5 +450,13 @@ footer .row {
     .qa-page {
         background-position: left top !important;
         background-image: url('/img/qa-page-mobile.jpg') !important;
+    }
+
+    .content-table td {
+        padding: 1.5rem 0.2rem;
+    }
+
+    .movie-intro-img {
+        background-image: url('/img/movie-page-mobile.jpg') !important;
     }
 }
