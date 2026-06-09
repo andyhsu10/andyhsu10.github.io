@@ -23,7 +23,7 @@ const noFlash = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrains.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: noFlash }} />
       </head>
