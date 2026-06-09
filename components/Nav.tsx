@@ -10,15 +10,15 @@ const anchors = [
 
 export function Nav() {
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-border bg-bg-from/70 backdrop-blur-md">
+    <nav className="border-border bg-bg-from/70 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md">
       <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3">
-        <Link href="/" className="font-mono text-sm font-semibold text-text">
+        <Link href="/" className="text-text font-mono text-sm font-semibold">
           AH
         </Link>
         <div className="flex items-center gap-4">
-          <div className="hidden gap-4 font-mono text-xs text-text-subtle sm:flex">
+          <div className="text-text-subtle hidden gap-4 font-mono text-xs sm:flex">
             {anchors.map((a) => (
-              <a key={a.href} href={a.href} className="transition-colors hover:text-accent-hover">
+              <a key={a.href} href={a.href} className="hover:text-accent-hover transition-colors">
                 {a.label}
               </a>
             ))}

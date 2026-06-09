@@ -10,7 +10,7 @@ export function FacetCards() {
         {facets.map((f) => (
           <Card key={f.title}>
             <h3 className="text-base font-semibold tracking-tight">{f.title}</h3>
-            <p className="mt-1.5 text-sm text-text-muted">{f.blurb}</p>
+            <p className="text-text-muted mt-1.5 text-sm">{f.blurb}</p>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {f.chips.map((c) => (
                 <Chip key={c}>{c}</Chip>

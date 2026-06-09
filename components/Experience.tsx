@@ -8,13 +8,13 @@ export function Experience() {
         {experience.map((e) => (
           <div
             key={e.company}
-            className="grid grid-cols-1 gap-1 border-t border-border py-4 sm:grid-cols-[120px_1fr] sm:gap-4"
+            className="border-border grid grid-cols-1 gap-1 border-t py-4 sm:grid-cols-[120px_1fr] sm:gap-4"
           >
-            <div className="font-mono text-xs text-text-subtle">{e.period}</div>
+            <div className="text-text-subtle font-mono text-xs">{e.period}</div>
             <div>
               <div className="text-sm font-semibold">{e.company}</div>
-              <div className="text-sm text-accent">{e.role}</div>
-              <p className="mt-1.5 text-sm leading-relaxed text-text-muted">{e.blurb}</p>
+              <div className="text-accent text-sm">{e.role}</div>
+              <p className="text-text-muted mt-1.5 text-sm leading-relaxed">{e.blurb}</p>
             </div>
           </div>
         ))}

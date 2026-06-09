@@ -6,7 +6,7 @@ import { Chip } from "@/components/ui/Chip";
 export function Projects() {
   return (
     <Section id="projects" label="Selected projects">
-      <p className="mb-4 font-mono text-xs text-text-subtle">{awardBadge}</p>
+      <p className="text-text-subtle mb-4 font-mono text-xs">{awardBadge}</p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {projects.map((p) => {
           const inner = (
@@ -14,10 +14,10 @@ export function Projects() {
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="text-base font-semibold tracking-tight">{p.name}</h3>
                 {p.context && (
-                  <span className="font-mono text-[11px] text-text-subtle">{p.context}</span>
+                  <span className="text-text-subtle font-mono text-[11px]">{p.context}</span>
                 )}
               </div>
-              <p className="mt-1.5 text-sm text-text-muted">{p.blurb}</p>
+              <p className="text-text-muted mt-1.5 text-sm">{p.blurb}</p>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => (
                   <Chip key={t}>{t}</Chip>

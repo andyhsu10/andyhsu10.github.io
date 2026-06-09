@@ -27,8 +27,7 @@ export const projects: Project[] = [
   },
   {
     name: "2024 Solar Eclipse Environment Monitor",
-    blurb:
-      "A monitor built to capture environmental changes during the 2024 total solar eclipse.",
+    blurb: "A monitor built to capture environmental changes during the 2024 total solar eclipse.",
     tags: ["Python", "IoT"],
     href: "https://github.com/andyhsu10/2024-solar-eclipse-orange-monitor",
   },

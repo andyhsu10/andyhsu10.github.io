@@ -15,12 +15,24 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Reveal><FacetCards /></Reveal>
-        <Reveal><About /></Reveal>
-        <Reveal><Experience /></Reveal>
-        <Reveal><Projects /></Reveal>
-        <Reveal><TechStack /></Reveal>
-        <Reveal><Personal /></Reveal>
+        <Reveal>
+          <FacetCards />
+        </Reveal>
+        <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
+          <Experience />
+        </Reveal>
+        <Reveal>
+          <Projects />
+        </Reveal>
+        <Reveal>
+          <TechStack />
+        </Reveal>
+        <Reveal>
+          <Personal />
+        </Reveal>
       </main>
       <Footer />
     </>

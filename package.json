@@ -9,6 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "vitest run"
   },
   "keywords": [],
@@ -31,8 +33,11 @@
     "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^9.39.4",
     "eslint-config-next": "^15.5.19",
+    "eslint-config-prettier": "^10.1.8",
     "jsdom": "^29.1.1",
     "postcss": "^8.5.15",
+    "prettier": "^3.8.4",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.8"

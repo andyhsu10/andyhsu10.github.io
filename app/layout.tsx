@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "An-Ting (Andy) Hsu — Software Engineer",
-    description:
-      "Full-stack products, developer tools, and distributed systems. Taipei-based.",
+    description: "Full-stack products, developer tools, and distributed systems. Taipei-based.",
     images: ["/og.svg"],
     type: "website",
   },

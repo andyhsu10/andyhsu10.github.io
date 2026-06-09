@@ -10,7 +10,7 @@ export function Section({
   return (
     <section id={id} className="mx-auto w-full max-w-3xl scroll-mt-20 px-6 py-12">
       {label && (
-        <h2 className="mb-6 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-text-subtle">
+        <h2 className="text-text-subtle mb-6 font-mono text-xs font-semibold tracking-[0.14em] uppercase">
           {label}
         </h2>
       )}
