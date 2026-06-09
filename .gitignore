@@ -44,3 +44,12 @@ Temporary Items
 
 # Superpowers brainstorm artifacts
 .superpowers/
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+
+# deps
+/node_modules
+npm-debug.log*
