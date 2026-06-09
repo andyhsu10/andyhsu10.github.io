@@ -1,0 +1,17 @@
+# Dependencies & build output
+node_modules
+.next
+out
+*.tsbuildinfo
+
+# Lockfiles
+pnpm-lock.yaml
+
+# Archived legacy site (left as-is)
+archive
+
+# Design docs (hand-formatted)
+docs
+
+# Binary / non-formattable assets
+public

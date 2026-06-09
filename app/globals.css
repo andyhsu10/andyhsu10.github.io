@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-from: #fbf7f4;
+  --bg-to: #f4eef6;
+  --dots: #e6dcea;
+  --surface: #ffffffc7;
+  --border: #ece0ee;
+  --text: #272029;
+  --text-muted: #564e5c;
+  --text-subtle: #9a8aa0;
+  --accent: #8a5a86;
+  --accent-hover: #744a70;
+  --chip: #f1eaf3;
+  --chip-text: #7d5f80;
+}
+
+.dark {
+  --bg-from: #181420;
+  --bg-to: #181420;
+  --dots: #2c2533;
+  --surface: #211b2a;
+  --border: #332b3e;
+  --text: #ece6ef;
+  --text-muted: #b3a9bd;
+  --text-subtle: #8c7d96;
+  --accent: #c79bc4;
+  --accent-hover: #d8b3d5;
+  --chip: #2a2233;
+  --chip-text: #cda9ca;
+}
+
+@theme inline {
+  --color-bg-from: var(--bg-from);
+  --color-bg-to: var(--bg-to);
+  --color-dots: var(--dots);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-chip: var(--chip);
+  --color-chip-text: var(--chip-text);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  color: var(--text);
+  background-color: var(--bg-from);
+  background-image:
+    radial-gradient(var(--dots) 1px, transparent 1px),
+    linear-gradient(160deg, var(--bg-from) 0%, var(--bg-to) 100%);
+  background-size:
+    16px 16px,
+    100% 100%;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
