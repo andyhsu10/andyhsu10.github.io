@@ -1,3 +1,28 @@
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { FacetCards } from "@/components/FacetCards";
+import { About } from "@/components/About";
+import { Experience } from "@/components/Experience";
+import { Projects } from "@/components/Projects";
+import { TechStack } from "@/components/TechStack";
+import { Personal } from "@/components/Personal";
+import { Footer } from "@/components/Footer";
+import { Reveal } from "@/components/Reveal";
+
 export default function Home() {
-  return <main className="p-10 text-text">Placeholder — theme tokens load.</main>;
+  return (
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Reveal><FacetCards /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><Experience /></Reveal>
+        <Reveal><Projects /></Reveal>
+        <Reveal><TechStack /></Reveal>
+        <Reveal><Personal /></Reveal>
+      </main>
+      <Footer />
+    </>
+  );
 }
