@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { FacetCards } from "@/components/FacetCards";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
 import { Projects } from "@/components/Projects";
 import { TechStack } from "@/components/TechStack";
 import { Personal } from "@/components/Personal";
@@ -23,6 +24,9 @@ export default function Home() {
         </Reveal>
         <Reveal>
           <Experience />
+        </Reveal>
+        <Reveal>
+          <Education />
         </Reveal>
         <Reveal>
           <Projects />

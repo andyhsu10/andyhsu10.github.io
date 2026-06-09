@@ -3,6 +3,7 @@ import { facets } from "@/content/facets";
 import { experience } from "@/content/experience";
 import { projects } from "@/content/projects";
 import { stack } from "@/content/stack";
+import { education } from "@/content/education";
 import { links } from "@/content/links";
 
 describe("content data", () => {
@@ -29,6 +30,14 @@ describe("content data", () => {
     const labels = stack.map((g) => g.label);
     expect(labels).toContain("Backend");
     expect(labels).toContain("Infrastructure");
+  });
+  it("lists three degrees newest-first from 2014 onward", () => {
+    expect(education).toHaveLength(3);
+    expect(education[0].school).toMatch(/National Taiwan University \(NTU\)/);
+    expect(education[education.length - 1].period).toMatch(/2014/);
+    for (const e of education) {
+      expect(e.school && e.degree && e.period).toBeTruthy();
+    }
   });
   it("omits email and keeps the three social links", () => {
     expect(links.github).toMatch(/github\.com\/andyhsu10/);

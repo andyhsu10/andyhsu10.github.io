@@ -13,6 +13,12 @@ export type Project = {
   tags: string[];
   href?: string;
 };
+export type EducationEntry = {
+  school: string;
+  degree: string;
+  period: string;
+  location?: string;
+};
 export type StackGroup = { label: string; items: string[] };
 export type SocialLinks = {
   github: string;
