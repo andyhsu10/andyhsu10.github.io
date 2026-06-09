@@ -61,17 +61,23 @@ Old files removed in Task 1: `index.html`, `style.css`, `animation.js`, `backgro
 - Create: `package.json`, `tsconfig.json`, `next.config.ts`, `postcss.config.mjs`, `next-env.d.ts`, `.gitignore` (append)
 - Delete: `index.html`, `style.css`, `animation.js`, `background.jpg`, `profile.ico`
 
-- [ ] **Step 1: Initialize npm + install deps**
+- [ ] **Step 1: Pin Node + install deps (nvm + pnpm)**
+
+Node is pinned to **v24.16.0** via `.nvmrc`; the package manager is **pnpm**.
 
 ```bash
-npm init -y
-npm install next@15 react@19 react-dom@19
-npm install -D typescript @types/react @types/node @types/react-dom \
+node -v > /dev/null  # ensure `nvm use` has selected v24.16.0 (see .nvmrc)
+pnpm init
+pnpm add next@15 react@19 react-dom@19
+pnpm add -D typescript @types/react @types/node @types/react-dom \
   tailwindcss @tailwindcss/postcss postcss \
   vitest @vitejs/plugin-react jsdom \
   @testing-library/react @testing-library/dom @testing-library/jest-dom \
   eslint eslint-config-next
 ```
+
+A `.nvmrc` containing `v24.16.0` is committed at the repo root so `nvm use`
+selects the right Node, and `packageManager` is pinned in `package.json`.
 
 - [ ] **Step 2: Write `package.json` scripts**
 
@@ -168,7 +174,7 @@ git mv 2018mis archive/2018mis
 - [ ] **Step 9: Commit**
 
 ```bash
-git add package.json package-lock.json tsconfig.json next.config.ts postcss.config.mjs .gitignore archive
+git add package.json pnpm-lock.yaml .nvmrc tsconfig.json next.config.ts postcss.config.mjs .gitignore archive
 git commit -m "chore: scaffold Next.js + Tailwind project, remove legacy site, archive 2018mis"
 ```
 
@@ -220,7 +226,7 @@ describe("test harness", () => {
 
 - [ ] **Step 4: Run it**
 
-Run: `npm test`
+Run: `pnpm test`
 Expected: PASS, 1 test.
 
 - [ ] **Step 5: Commit**
@@ -335,7 +341,7 @@ export default function Home() {
 
 - [ ] **Step 4: Verify the dev build compiles**
 
-Run: `npm run build`
+Run: `pnpm build`
 Expected: build succeeds, `out/` directory created with `index.html`.
 
 - [ ] **Step 5: Commit**
@@ -391,7 +397,7 @@ describe("applyTheme", () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `npm test -- tests/theme.test.ts`
+Run: `pnpm test -- tests/theme.test.ts`
 Expected: FAIL — cannot resolve `@/lib/theme`.
 
 - [ ] **Step 3: Write `lib/theme.ts`**
@@ -411,7 +417,7 @@ export function applyTheme(theme: Theme, root: HTMLElement = document.documentEl
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `npm test -- tests/theme.test.ts`
+Run: `pnpm test -- tests/theme.test.ts`
 Expected: PASS, 6 tests.
 
 - [ ] **Step 5: Write `components/ThemeToggle.tsx`**
@@ -539,7 +545,7 @@ describe("content data", () => {
 
 - [ ] **Step 3: Run test to verify it fails**
 
-Run: `npm test -- tests/content.test.ts`
+Run: `pnpm test -- tests/content.test.ts`
 Expected: FAIL — modules not found.
 
 - [ ] **Step 4: Write `content/links.ts`**
@@ -732,7 +738,7 @@ export const personal = {
 
 - [ ] **Step 11: Run test to verify it passes**
 
-Run: `npm test -- tests/content.test.ts`
+Run: `pnpm test -- tests/content.test.ts`
 Expected: PASS, 5 tests.
 
 - [ ] **Step 12: Commit**
@@ -902,7 +908,7 @@ describe("Hero", () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `npm test -- tests/components.test.tsx`
+Run: `pnpm test -- tests/components.test.tsx`
 Expected: FAIL — cannot resolve `@/components/Hero`.
 
 - [ ] **Step 3: Write `components/Hero.tsx`**
@@ -936,7 +942,7 @@ export function Hero() {
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `npm test -- tests/components.test.tsx`
+Run: `pnpm test -- tests/components.test.tsx`
 Expected: PASS.
 
 - [ ] **Step 5: Commit**
@@ -974,7 +980,7 @@ describe("FacetCards", () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `npm test -- tests/components.test.tsx`
+Run: `pnpm test -- tests/components.test.tsx`
 Expected: FAIL — cannot resolve `@/components/FacetCards`.
 
 - [ ] **Step 3: Write `components/FacetCards.tsx`**
@@ -1008,7 +1014,7 @@ export function FacetCards() {
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `npm test -- tests/components.test.tsx`
+Run: `pnpm test -- tests/components.test.tsx`
 Expected: PASS.
 
 - [ ] **Step 5: Commit**
@@ -1355,12 +1361,12 @@ export default function Home() {
 
 - [ ] **Step 2: Run the full test suite**
 
-Run: `npm test`
+Run: `pnpm test`
 Expected: PASS — all suites (theme, content, components, smoke).
 
 - [ ] **Step 3: Build and verify static export**
 
-Run: `npm run build`
+Run: `pnpm build`
 Expected: build succeeds; `out/index.html` exists and contains "Andy".
 
 Run: `grep -c "Andy" out/index.html`
@@ -1368,7 +1374,7 @@ Expected: ≥ 1.
 
 - [ ] **Step 4: Visual check in dev server**
 
-Run: `npm run dev`, open http://localhost:3000
+Run: `pnpm dev`, open http://localhost:3000
 Expected: Hero, 4 facet cards, all sections render; theme toggle flips dark/light; no console errors. Stop with Ctrl-C.
 
 - [ ] **Step 5: Commit**
@@ -1405,7 +1411,7 @@ export default function Writing() {
 
 - [ ] **Step 2: Verify it builds**
 
-Run: `npm run build`
+Run: `pnpm build`
 Expected: `out/writing/index.html` exists.
 
 - [ ] **Step 3: Commit**
@@ -1508,7 +1514,7 @@ ls public/An-Ting-Hsu-Resume.pdf 2>/dev/null || echo "TODO: drop the 2024.11 res
 
 - [ ] **Step 6: Build & verify assets land in `out/`**
 
-Run: `npm run build`
+Run: `pnpm build`
 Expected: `out/favicon.svg`, `out/og.svg`, and `out/.nojekyll` exist.
 
 - [ ] **Step 7: Commit**
@@ -1549,12 +1555,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
@@ -1597,19 +1604,19 @@ git commit -m "ci: GitHub Actions build + deploy to Pages"
 
 ```bash
 rm -rf .next out
-npm run build
+pnpm build
 ```
 Expected: build succeeds with no errors.
 
 - [ ] **Step 2: Full test suite + lint**
 
-Run: `npm test && npm run lint`
+Run: `pnpm test && pnpm lint`
 Expected: all tests PASS; lint reports no errors.
 
 - [ ] **Step 3: Serve the static export and smoke-check**
 
 ```bash
-npx serve out -l 4000
+pnpm dlx serve out -l 4000
 ```
 Open http://localhost:4000 — confirm: all sections render, dark/light toggle works and persists across reload, links point to GitHub/LinkedIn/Resume (hero) and GitHub/LinkedIn/Instagram (footer), no email anywhere, favicon shows. Stop with Ctrl-C.
 
