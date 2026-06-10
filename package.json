@@ -17,6 +17,7 @@
   "author": "An-Ting Hsu",
   "license": "MIT",
   "dependencies": {
+    "@next/third-parties": "15",
     "next": "15",
     "react": "19",
     "react-dom": "19"
